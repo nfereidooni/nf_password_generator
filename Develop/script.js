@@ -1,5 +1,27 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
+// Password Generator
+
+// Assignment Code and Event Listener to prompt user after clicking on generate button
+
+document.querySelector("#generate").addEventListener("click", writePassword);
+
+// Character Arrays
+
+var charSetSpecial = ["!", "\"", "#", "$" "%", "&", "\'", "(", ")", ",", "*", "+", "-", ".", "/", ":", ";", "=" "<", ">", "?", "@", "[", "\\", "]", "^", "_", "`", "{", "|", "}", "~"]
+var charSetNumeric = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+var charSetLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var charSetUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+// Ask user how many charcters they would like their password to contain
+
+function generatePassword() {
+  var passwordLength = (prompt("How many characters would you like your password to contain?"));
+
+// Ask user about character types they would like to have in their password
+
+var confirmSpecial = confirm("Click OK if you would like to include special characters.");
+var confirmNumeric = confirm("Click OK if you would like to include numeric characters.");    
+var confirmLower = confirm("Click OK if you would like to include lowercase characters.");
+var confirmUpper = confirm("Click OK if you would like to include uppercase characters.");
 
 // Write password to the #password input
 function writePassword() {
@@ -11,15 +33,3 @@ function writePassword() {
 
 }
 
-// Ask how many charcters user would like password to contain
-
-// Confirm if user would like special characters
-
-// Confirm if user wants numeric characters
-
-// Confirm if user wants lowercase characters
-
-// Confirm if user wants uppercase characters
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
